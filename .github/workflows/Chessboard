@@ -4,3 +4,4 @@ public class ChessBoard {
 
 
 }
+// Draw chessboard based on array of pieces
