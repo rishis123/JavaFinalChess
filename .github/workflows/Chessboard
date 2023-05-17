@@ -1,7 +1,41 @@
-public class ChessBoard {
+import javax.swing.*;
+import java.awt.*;
 
+public class ChessBoard extends JPanel {
+    private static final int SQUARE_SIZE = 50;
+    private static final int BOARD_SIZE = 8;
+    private static final Color LIGHT_COLOR = Color.WHITE;
+    private static final Color DARK_COLOR = Color.GRAY;
+    private static final Color PIECE_COLOR = Color.BLACK;
+    private static final Font PIECE_FONT = new Font("Arial", Font.PLAIN, 32);
+    private static final String[] PIECE_SYMBOLS = {"♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"};
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
 
+        // Draw chessboard squares
+        for (int row = 0; row < BOARD_SIZE; row++) {
+            for (int col = 0; col < BOARD_SIZE; col++) {
+                int x = col * SQUARE_SIZE;
+                int y = row * SQUARE_SIZE;
+                Color squareColor = (row + col) % 2 == 0 ? LIGHT_COLOR : DARK_COLOR;
+                g2d.setColor(squareColor);
+                g2d.fillRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+            }
+        }
 
+//         Draw chess pieces
+        g2d.setFont(PIECE_FONT);
+        g2d.setColor(PIECE_COLOR);
+        for (int row = 0; row < BOARD_SIZE; row++) {
+            for (int col = 0; col < BOARD_SIZE; col++) {
+                int x = col * SQUARE_SIZE + SQUARE_SIZE / 2;
+                int y = row * SQUARE_SIZE + SQUARE_SIZE / 2;
+                String pieceSymbol = PIECE_SYMBOLS[row * BOARD_SIZE + col];
+                g2d.drawString(pieceSymbol, x - SQUARE_SIZE / 4, y + SQUARE_SIZE / 4);
+            }
+        }
+    }
 }
-// Draw chessboard based on array of pieces
