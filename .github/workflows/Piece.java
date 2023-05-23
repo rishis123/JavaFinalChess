@@ -32,7 +32,7 @@ public abstract class Piece {
 	}
 	
 	//returns true if move is made, false if not, updates the row/col of piece object, mb change later?
-	public boolean move(int toRow, int toCol, Board b) {
+	public boolean move(int toRow, int toCol, Board b) { // is toRow and toCol the final row or column or intiial
 		if (isLegal(toRow, toCol, b)) {
 		    Piece p = b[row][column];
 		    b[row][column == null;
