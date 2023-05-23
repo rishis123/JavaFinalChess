@@ -8,7 +8,7 @@ public class ChessBoard extends JPanel { // what we did for graphics
     private static final Color graySquare = Color.GRAY; // see above
     private static final Color pieceColor = Color.BLACK; // THINK OVER THIS
     private static final Font pieceFont = new Font("Arial", Font.PLAIN, 32); // We need a font to draw the below piece symbols.
-    private static final String[] pieceSymbols = {"♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"}; // symbols from internet 
+    private static final Piece[] pieceBlackSymbols = {new Pawn(), new Pawn (), new Pawn (), "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"}; // symbols from internet 
 
     protected void paintComponent(Graphics g) { // We are overriding this method from JComponent abstract class
         super.paintComponent(g); 
@@ -37,7 +37,7 @@ public class ChessBoard extends JPanel { // what we did for graphics
             for (int col = 0; col < boardLength; col++) {
                 int x = col * squareLength + squareLength / 2; // prints each piece in the middle of each square
                 int y = row * squareLength + squareLength / 2;
-                String pieceSymbol = pieceSymbols[row * boardLength + col]; // THINK OVER THIS
+                String pieceSymbol = pieceSymbols[row * boardLength + col]; // REVISE
                 g2d.drawString(pieceSymbol, x - squareLength / 4, y + squareLength / 4); // based on the font-size, the "cursor" needs to start 1/4 of the squareLength to the left of the middle
             }
         }
