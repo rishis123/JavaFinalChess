@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="fixed constructor">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Rook.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QAxfJ8FLJ8TMxG3e514zPmwJsA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="" />
+      <created>1684810289170</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684810289170</updated>
+    </task>
+    <task id="LOCAL-00001" summary="fixed constructor">
+      <created>1684816156961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684816156961</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="nick1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="nick1" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed constructor" />
+  </component>
+</project>
