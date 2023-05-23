@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Chessboard" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Chessboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/EmptySquare.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Rook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Square.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
