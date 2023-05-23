@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="" />
+    <list default="true" id="d6be6385-2c31-4cf8-9f9f-dfe4b901f6f2" name="Changes" comment="fixed constructor">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Rook.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +43,14 @@
       <option name="presentableId" value="Default" />
       <updated>1684810289170</updated>
     </task>
+    <task id="LOCAL-00001" summary="fixed constructor">
+      <created>1684816156961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684816156961</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,5 +95,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed constructor" />
   </component>
 </project>

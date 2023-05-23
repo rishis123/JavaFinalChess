@@ -5,7 +5,7 @@ public abstract class Piece {
 	private int row;
 	private int column;
 	
-	public Piece(String n, boolean c, int col, int _row, int v) {
+	public Piece(String n, boolean c, int _row, int col, int v) {
 		name = n;
 		color = c;
 		value = v;
@@ -35,7 +35,7 @@ public abstract class Piece {
 	public boolean move(int toRow, int toCol, Board b) { // is toRow and toCol the final row or column or intiial
 		if (isLegal(toRow, toCol, b)) {
 		    Piece p = b[row][column];
-		    b[row][column == null;
+		    b[row][column] == null;
 		    b[toRow][toCol] == p;
 			column = toCol;
 			row = toRow;
