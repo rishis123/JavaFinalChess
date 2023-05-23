@@ -11,28 +11,32 @@ public class Board {
 			
 			if(i == 0 || i == 7) {
 				board[7][i] = new Rook(true);
-				board[1][i] = new Rook(false);
+				board[0][i] = new Rook(false);
 			}
 			if(i == 1 || i == 6) {
 				board[7][i] = new Knight(true);
-				board[1][i] = new Knight(false);
+				board[0][i] = new Knight(false);
 			}
 			if(i == 2 || i == 5) {
 				board[7][i] = new Bishop(true);
-				board[1][i] = new Bishop(false);
+				board[0][i] = new Bishop(false);
 			}
 			if(i == 3) {
 				board[7][i] = new Queen(true);
-				board[1][i] = new Queen(false);
+				board[0][i] = new Queen(false);
 			}
 			if(i == 4) {
 				board[7][i] = new King(true);
-				board[1][i] = new King(false);
+				board[0][i] = new King(false);
 			}
 		}
 	}
 	
 	public Piece[][] getBoard(){
 		return board;
+	}
+	
+	public void setSquare(Piece p, int row, int col) {
+		board[row][col] = p;
 	}
 }
