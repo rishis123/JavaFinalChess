@@ -15,11 +15,9 @@ public class Knight extends Piece {
 		int diffRow = Math.abs(currRow - toRow);
 		int diffCol = Math.abs(currCol - toCol);
 		if ((diffRow != 0 && diffCol == 0) && (diffRow + diffCol == 3)) { // valid move combo
-			
-			
-			
-		if (
-		
-	    return false; // implement later
-	}
+			return true;
+		}		
+	   	 return false; 
+	} 
+	// no need to overload move method??
 }
