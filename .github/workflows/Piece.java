@@ -1,4 +1,5 @@
 public abstract class Piece {
+	private String movesList[];
 	private String name;
 	private boolean color; //white is true, black is false
 	private int value;
