@@ -1,14 +1,25 @@
 public class Knight extends Piece {
 	private int currRow; 
 	private int currCol;
+	private String[] possibleMoves;
 	
 	public Knight(boolean c, int row, int col) {
 		super("knight", c, row, col, 3);
 		currRow = row;
 		currCol = col;
 	}
+	
+	public String[] allPossibleMoves() {
+		
+		// include all the 2s, then 1s, don't need 1s and 2s again since double counting
+		
+		//
+		
+	}
 
 	public boolean isLegal(int toRow, int toCol, Board _b) {
+		for (int i = 0; i<
+	}
 		
 		
 	//don't need to worry about pieces in the middle
