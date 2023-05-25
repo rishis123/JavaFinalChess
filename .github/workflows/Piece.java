@@ -48,6 +48,7 @@ public abstract class Piece {
 	}
 	
 	//returns true if the move toRow, toCol is legal
-	public boolean isLegal(int toRow, int toCol, Board _b);
+	public abstract boolean isLegal(int toRow, int toCol, Board _b);
+	public abstract int[][] getPossibleMoves(Board b);
 	
 }
