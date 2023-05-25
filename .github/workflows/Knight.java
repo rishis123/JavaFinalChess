@@ -9,7 +9,13 @@ public class Knight extends Piece {
 		currCol = col;
 	}
 	
-	public String[] allPossibleMoves() {
+	public int[][] getPossibleMoves(Board b) {
+		Pieces[][] board = b.getBoard();
+		int[][] possibleMoves = new int[2][8]; //rishi i started it for you, just fill this array w/ all the possible moves. row 0 is the row, row 1 is the column.
+		for(int i = 0; i < possibleMoves[0].length; i++) {
+			possibleMoves[0][i] = -1;
+			possibleMoves[1][i] = -1;
+		}			
 		
 		// include all the 2s, then 1s, don't need 1s and 2s again since double counting
 		
