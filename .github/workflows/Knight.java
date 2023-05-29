@@ -18,7 +18,7 @@ public class Knight extends Piece {
  		}
 		
 		int row = getRow();
-		int col = getColumn();
+		int col = getCol();
 		int i = 0;
 		
 		//Let's start with the two up, one left, using if functionality since don't need while to go through
@@ -38,7 +38,7 @@ public class Knight extends Piece {
 		//now two up, one right
 		
 		row = getRow() + 2;
-		col = getColumn() + 1;
+		col = getCol() + 1;
 		if (row <= 7 && col <= 7 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -52,7 +52,7 @@ public class Knight extends Piece {
 		
 		//now one up, two left
 		row = getRow() + 1;
-		col = getColumn() -2;
+		col = getCol() -2;
 		if (row <= 7 && col >=0 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -66,7 +66,7 @@ public class Knight extends Piece {
 		
 		//now one up, two right
 		row = getRow() + 1;
-		col = getColumn() +2;
+		col = getCol() +2;
 		if (row <= 7 && col <=7 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -80,7 +80,7 @@ public class Knight extends Piece {
 		
 		//now one down, two left
 		row = getRow() -1;
-		col = getColumn() -2;
+		col = getCol() -2;
 		if (row >= 0 && col >=0 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -95,7 +95,7 @@ public class Knight extends Piece {
 		// now one down, two right
 		
 		row = getRow() -1;
-		col = getColumn() +2;
+		col = getCol() +2;
 		if (row >= 0 && col <=7 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -109,7 +109,7 @@ public class Knight extends Piece {
 		
 		//now two down, one left
 		row = getRow() -2;
-		col = getColumn() -1;
+		col = getCol() -1;
 		if (row >= 0 && col >=0 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -124,7 +124,7 @@ public class Knight extends Piece {
 		//now two down, one right
 		
 		row = getRow() -2;
-		col = getColumn() +1;
+		col = getCol() +1;
 		if (row >= 0 && col <=7 && board[row][col] == null) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
