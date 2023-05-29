@@ -37,4 +37,8 @@ public class Board {
 	public void setSquare(Piece p, int row, int col) {
 		board[row][col] = p;
 	}
+	
+	public Piece getSquare(int r, int c) {
+		return board[r][c];
+	}
 }
