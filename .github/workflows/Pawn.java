@@ -73,5 +73,8 @@ public class Pawn extends Piece {
 		if (!getColor() && row == 0) {//black pawn promotion
 	           pawnPromote(); //write new method
 		}
+		
+	return possibleMoves;
 	}
+	
 }
