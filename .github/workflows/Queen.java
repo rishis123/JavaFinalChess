@@ -17,7 +17,7 @@ public class Queen extends Piece {
  		}
 		
 		int row = getRow();
-		int col = getColumn();
+		int col = getCol();
 		int i = 0;
 		
 		row--;
