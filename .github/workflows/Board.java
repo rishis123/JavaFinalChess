@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Board {
 	private Piece[][] board; //rows are letters, columns are numbers; top left is a8, bottom right is h1
 	
