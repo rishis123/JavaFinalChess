@@ -77,4 +77,19 @@ public class Pawn extends Piece {
 	return possibleMoves;
 	}
 	
+	
+	/** 
+	This method promotes a white pawn in our 7th row or a black pawn in our 0th row to a same-colored queen, overwrites the pawn reference
+	
+	*/
+	public void pawnPromote() {
+		if (getColor() && row == 7) { // white pawn promotion
+			// where are we getting the board passed in --> would probably use setSquare method and replace it with a same color queen
+		}
+		else {
+			//same question
+		}
+		
+		
+	}
 }
