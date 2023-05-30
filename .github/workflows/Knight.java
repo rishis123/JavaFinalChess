@@ -29,7 +29,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row <= 7 && col>= 0 && board[row][col].getColor()! = getColor()) {
+		if (row <= 7 && col>= 0 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -44,7 +44,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row <= 7 && col <= 7 && board[row][col].getColor()! = getColor()) {
+		if (row <= 7 && col <= 7 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -58,7 +58,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row <= 7 && col >=0 && board[row][col].getColor()! = getColor()) {
+		if (row <= 7 && col >=0 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -72,7 +72,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row <= 7 && col <=7 && board[row][col].getColor()! = getColor()) {
+		if (row <= 7 && col <=7 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -86,7 +86,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row >= 0 && col >=0 && board[row][col].getColor()! = getColor()) {
+		if (row >= 0 && col >=0 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -101,7 +101,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row >= 0 && col <=7 && board[row][col].getColor()! = getColor()) {
+		if (row >= 0 && col <=7 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -115,7 +115,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row >= 0 && col >=0 && board[row][col].getColor()! = getColor()) {
+		if (row >= 0 && col >=0 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -130,7 +130,7 @@ public class Knight extends Piece {
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row >= 0 && col <= 7 && board[row][col].getColor()! = getColor()) {
+		if (row >= 0 && col <= 7 && board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -139,16 +139,6 @@ public class Knight extends Piece {
 		return possibleMoves;	
 	}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 
 	public boolean isLegal(int toRow, int toCol, Board _b) {
 		for (int i = 0; i<
