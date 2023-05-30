@@ -1,19 +1,16 @@
 public class Game {
     private int result;
-    private boolean move;
     private Board b;
     private int wKingx;
     private int wKingy;
     private int bKingx;
     private int bKingy;
 
-    public Game(boolean _move) {
-        move = _move;
+    public Game() {
         b = new Board();
     }
 
-    public Game(boolean _move, Board _b) {
-        move = _move;
+    public Game(Board _b) {
         b = _b;
     }
 
