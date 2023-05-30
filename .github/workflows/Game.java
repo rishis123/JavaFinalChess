@@ -14,7 +14,8 @@ public class Game {
         b = _b;
     }
 
-    public int[][] findPieces(boolean color, String name) {
+    public static int[][] findPieces(Board _b, boolean color, String name) {
+        Pieces[][] b = _b.getBoard();
         int[][] pieceLocations = new int[2][8]; //8 pawns is max
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 8; j++) {
@@ -70,9 +71,26 @@ public class Game {
     }
     
     
-    public boolean checkCheck() {
-        return false; //implement later
-    }
+    public static boolean checkCheck(Board _b, boolean color) {
+        Pieces[][] b = _b.getBoard();
+		int[][] kingLoc = findPieces(b, color, "king"); // finds the location of the king
+		int kingR = kingLoc[0][0];
+		int kingC = kingLoc[1][0];
+		
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b[0].length; j++) { // iterates through the board looking for pieces of the other color
+				if (b[i][j] != null && b[i][j].getColor() != color) {
+					int[][] moves = b[i][j].getPossibleMoves(b);
+					for (int k = 0; k < moves[0].length; k++) { // checks if the king's square is a possible move
+						if (moves[0][k] == kingR && moves[1][k] == kingC) {
+							return true;
+						}
+					}
+				}
+			}
+		}		
+		return false;
+	}
 
     public int checkMate() {
         result = 1;
