@@ -48,6 +48,13 @@ public class Board {
 		board[row][col] = p;
 	}
 	
+	/**
+ 	Returns the piece at a specified square / position in the 2D array
+ 	
+ 	@param r the row value of the specific piece, as seen in 2D array
+ 	@param c the column value of the same piece.
+ 	
+ 	*/
 	public Piece getSquare(int r, int c) {
 		return board[r][c];
 	}
