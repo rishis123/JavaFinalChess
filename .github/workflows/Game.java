@@ -14,37 +14,26 @@ public class Game {
         b = _b;
     }
 
-    public int[][] findPieces (boolean color, String name) {
-        int[][] pieceLocations = new int[2][8] //8 pawns is max
-        for (int i = 0; i<2; i++) {
-            for (int j = 0; j<8; j++) {
-                pieceLocations[i][j] = -1; // set initial values
+    public int[][] findPieces(boolean color, String name) {
+        int[][] pieceLocations = new int[2][8]; //8 pawns is max
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 8; j++) {
+                pieceLocations[i][j] = -1; // set initial values to -1
             }
         }
                 
-        int c = 0;//counter
+        int c = 0; //counter
         
-         for (int i = 0; i<b.length; i++) {
-             for (int j = 0; J<b[0].length; j++ ) {
-
-             if (color == b[i][j].getColor() && name == b[i][j].getName()) {
-                 pieceLocations[0][counter] = b[i][j].getRow();
-                 piecelocations[1][counter] = b[i][j].getCol();
-                 counter++;
-             }
+         for (int i = 0; i < b.length; i++) {
+             for (int j = 0; j < b[0].length; j++ ) {
+            	 if (b[i][j] != null && b[i][j].getColor() == color && b[i][j].getName() == name) {
+            		 pieceLocations[0][c] = b[i][j].getRow();
+            		 pieceLocations[1][c] = b[i][j].getCol();
+            		 c++;
+            	 }
              }
          }
-        
-        int[][] replacedList = new int[2][counter]; //get rid of all -1s
-        for (int i = 0; i<counter; i++) {
-            replacedList[0][i] = pieceLocations[0][i];
-            replacedList[1][i] = pieceLocations[1][i];
-        }
-            
-        return replacedList;
-                 
-       
-           
+        return pieceLocations;     
     }
     
     
