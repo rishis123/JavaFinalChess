@@ -34,9 +34,25 @@ public class Board {
 		return board;
 	}
 	
+	/**
+	Sets a position on 2D array to an inputted piece -- useful in the swaps for capturing, castling, and pawn promotion. 
+	@param p the piece that you want to replace existing piece with
+	@param row the row value of the replacing piece (note: 0-based indexing)
+	@param col the column value of the replacing piece (note: again 0-based indexing
+	
+	*/
+	
 	public void setSquare(Piece p, int row, int col) {
 		board[row][col] = p;
 	}
+	
+	/**
+	Returns the piece at a specified square / position in the 2D array
+	
+	@param r the row value of the specific piece, as seen in 2D array
+	@param c the column value of the same piece.
+	
+	*/
 	
 	public Piece getSquare(int r, int c) {
 		return board[r][c];
