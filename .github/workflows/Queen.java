@@ -62,7 +62,7 @@ public class Queen extends Piece {
 			i++;
 		}
 		
-		col = getColumn() + 1;
+		col = getCol() + 1;
 		
 		while (col <= 7 && board[row][col] == null) { // Check row left
 			possibleMoves[0][i] = row;
@@ -80,7 +80,7 @@ public class Queen extends Piece {
 		
 		
 		row = getRow() -1;
-		col = getColumn() -1;
+		col = getCol() -1;
 		while (row >= 0 && col >= 0 && board[row][col] == null) { // Check down-left diagonal
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
@@ -131,7 +131,7 @@ public class Queen extends Piece {
 		}
 		
 		row = getRow() + 1;
-		col = getColumn() - 1; // now we look at up-left diagonal
+		col = getCol() - 1; // now we look at up-left diagonal
 		
 		while (col >= 0 && row<=7 && board[row][col] == null) { // Check row left
 			possibleMoves[0][i] = row;
