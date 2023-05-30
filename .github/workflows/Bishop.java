@@ -17,7 +17,7 @@ public class Bishop extends Piece {
  		}
 		
 		int row = getRow();
-		int col = getColumn(); // finds row, col of the bishop currently
+		int col = getCol(); // finds row, col of the bishop currently
 		int i = 0;
 		
 		row--;
@@ -72,7 +72,7 @@ public class Bishop extends Piece {
 		}
 		
 		row = getRow() + 1;
-		col = getColumn() - 1; // now we look at up-left diagonal
+		col = getCol() - 1; // now we look at up-left diagonal
 		
 		while (col >= 0 && row<=7 && board[row][col] == null) { // Check row left
 			possibleMoves[0][i] = row;
