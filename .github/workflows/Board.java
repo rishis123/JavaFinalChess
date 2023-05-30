@@ -57,4 +57,16 @@ public class Board {
 	public Piece getSquare(int r, int c) {
 		return board[r][c];
 	}
+	
+	public ArrayList<Piece> pieces() {
+		ArrayList<Piece> p = new ArrayList<Piece>();
+		for(int r = 0; r < 8; r++) {
+			for(int c = 0; c < 8; c++) {
+				if(board[r][c] != null) {
+					p.add(board[r][c]);
+				}
+			}
+		}
+		return p;
+	}
 }
