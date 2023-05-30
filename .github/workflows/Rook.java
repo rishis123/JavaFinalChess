@@ -1,5 +1,5 @@
 public class Rook extends Piece {
-	public Rook(boolean c, row, col) {
+	public Rook(boolean c, int row, int col) {
 		super("rook", c, row, col, 5);
 	}
 
@@ -67,7 +67,7 @@ public class Rook extends Piece {
 			i++;
 		}
 		
-		col = getColumn() + 1;
+		col = getCol() + 1;
 		
 		while (col <= 7 && board[row][col] == null) { // Check row left
 			possibleMoves[0][i] = row;
