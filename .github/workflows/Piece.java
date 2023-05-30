@@ -2,14 +2,12 @@ public abstract class Piece {
 	private String movesList[];
 	private String name;
 	private boolean color; //white is true, black is false
-	private int value;
 	private int row;
 	private int col;
 	
-	public Piece(String n, boolean c, int _row, int _col, int v) {
+	public Piece(String n, boolean c, int _row, int _col) {
 		name = n;
 		color = c;
-		value = v;
 		row = _row;
 		col = _col;
 	}
@@ -22,9 +20,7 @@ public abstract class Piece {
 	public boolean getColor() {
 		return color;
 	}
-	public int getValue() {
-		return value;
-	}
+//removed value - no point
 	public int getCol() {
 	    return col;
 	}
