@@ -27,6 +27,13 @@ public class ChessBoardDisplay {
 	private static ArrayList<Piece> p = b.pieces();
 	private static Piece m = null;
 	
+	
+	/**
+	Returns piece at a specific (x,y) coordinate by finding corresponding (row,col) on grid
+	
+	@param x the potential piece's  x-coordinate.
+	@param y the potential piece's y-coordinate.
+	*/
 	public static Piece getPiece(int x, int y) {
 		int row = x / 60;
 		int col = y / 60;
@@ -37,6 +44,9 @@ public class ChessBoardDisplay {
 		}
 		return null;
 	}
+	
+	
+	
 	
 	public static void main(String[] args) throws IOException {
 		JFrame frame = new JFrame();
