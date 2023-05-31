@@ -170,7 +170,7 @@ public class ChessBoardDisplay {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println(e.getX() / 60 + " | " + ((int) ((e.getY() - 30) / 60)) );
-				System.out.println(getPiece(e.getX(), e.getY() - 30));
+				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
 				
 				m = getPiece(e.getX(), e.getY() - 30);
 			}
