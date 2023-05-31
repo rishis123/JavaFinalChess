@@ -33,6 +33,7 @@ public class ChessBoardDisplay {
 	
 	@param x the potential piece's  x-coordinate.
 	@param y the potential piece's y-coordinate.
+	@return the piece at the specified coordinates
 	*/
 	public static Piece getPiece(int x, int y) {
 		int row = x / 60;
