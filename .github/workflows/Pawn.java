@@ -2,7 +2,7 @@ public class Pawn extends Piece {
     private boolean hasMoved;
 
 	public Pawn(boolean c, int row, int col) {
-		super("pawn", c, row, col, 1);
+		super("pawn", c, row, col);
 	}
 
 	public boolean isLegal(int toRow, int toCol, Board _b) {
@@ -83,13 +83,6 @@ public class Pawn extends Piece {
 	
 	*/
 	public void pawnPromote() {
-		if (getColor() && row == 7) { // white pawn promotion
-			// where are we getting the board passed in --> would probably use setSquare method and replace it with a same color queen
-		}
-		else {
-			//same question
-		}
-		
 		
 	}
 }

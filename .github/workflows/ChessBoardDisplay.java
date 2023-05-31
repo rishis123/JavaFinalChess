@@ -1,4 +1,3 @@
-import Game.*;
 import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -46,18 +45,18 @@ public class ChessBoardDisplay {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.setUndecorated(true);
 		
-		BufferedImage whitePawn = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whitePawn.png"));
-		BufferedImage blackPawn = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackPawn.png"));
-		BufferedImage whiteRook = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whiteRook.png"));
-		BufferedImage blackRook = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackRook.png"));
-		BufferedImage whiteKnight = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whiteKnight.png"));
-		BufferedImage blackKnight = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackKnight.png"));
-		BufferedImage whiteBishop = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whiteBishop.png"));
-		BufferedImage blackBishop = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackBishop.png"));
-		BufferedImage whiteKing = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whiteKing.png"));
-		BufferedImage blackKing = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackKing.png"));
-		BufferedImage whiteQueen = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/whiteQueen.png"));
-		BufferedImage blackQueen = ImageIO.read(ChessBoardDisplay.class.getResource("/Pieces/blackQueen.png"));
+		BufferedImage whitePawn = ImageIO.read(ChessBoardDisplay.class.getResource("whitePawn.png"));
+		BufferedImage blackPawn = ImageIO.read(ChessBoardDisplay.class.getResource("blackPawn.png"));
+		BufferedImage whiteRook = ImageIO.read(ChessBoardDisplay.class.getResource("whiteRook.png"));
+		BufferedImage blackRook = ImageIO.read(ChessBoardDisplay.class.getResource("blackRook.png"));
+		BufferedImage whiteKnight = ImageIO.read(ChessBoardDisplay.class.getResource("whiteKnight.png"));
+		BufferedImage blackKnight = ImageIO.read(ChessBoardDisplay.class.getResource("blackKnight.png"));
+		BufferedImage whiteBishop = ImageIO.read(ChessBoardDisplay.class.getResource("whiteBishop.png"));
+		BufferedImage blackBishop = ImageIO.read(ChessBoardDisplay.class.getResource("blackBishop.png"));
+		BufferedImage whiteKing = ImageIO.read(ChessBoardDisplay.class.getResource("whiteKing.png"));
+		BufferedImage blackKing = ImageIO.read(ChessBoardDisplay.class.getResource("blackKing.png"));
+		BufferedImage whiteQueen = ImageIO.read(ChessBoardDisplay.class.getResource("whiteQueen.png"));
+		BufferedImage blackQueen = ImageIO.read(ChessBoardDisplay.class.getResource("blackQueen.png"));
 
 //		Board b = new Board();
 		
@@ -170,10 +169,10 @@ public class ChessBoardDisplay {
 		frame.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println(e.getX() / 60 + " | " + e.getY() / 60);
-				System.out.println(getPiece(e.getX(), e.getY()));
+				System.out.println(e.getX() / 60 + " | " + ((int) ((e.getY() - 30) / 60)) );
+				System.out.println(getPiece(e.getX(), e.getY() - 30));
 				
-				m = getPiece(e.getX(), e.getY());
+				m = getPiece(e.getX(), e.getY() - 30);
 			}
 			
 			@Override

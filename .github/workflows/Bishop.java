@@ -1,6 +1,7 @@
+
 public class Bishop extends Piece {
 	public Bishop(boolean c, int row, int col) {
-		super("bishop", c, row, col, 3);
+		super("bishop", c, row, col);
 	}
 
 	public boolean isLegal(int toRow, int toCol, Board _b) {

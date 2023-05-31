@@ -1,6 +1,6 @@
 public class Rook extends Piece {
 	public Rook(boolean c, int row, int col) {
-		super("rook", c, row, col, 5);
+		super("rook", c, row, col);
 	}
 
 	public boolean isLegal(int toRow, int toCol, Board _b) {
@@ -11,6 +11,7 @@ public class Rook extends Piece {
 			if (possibleMoves[0][i] == toRow && possibleMoves[1][i] == toCol) { return true; }
 			else { return false; }
 		}
+	   	return false;
 	}
 	
 	public int[][] getPossibleMoves(Board b) {
