@@ -56,7 +56,7 @@ public class ChessBoardDisplay {
 	
 	public static void main(String[] args) throws IOException {
 		JFrame frame = new JFrame();
-		frame.setSize(700, 600);
+		frame.setSize(600, 600);
 		frame.setTitle("Chess");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //		frame.setUndecorated(true);
