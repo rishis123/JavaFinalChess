@@ -1,4 +1,4 @@
-/**This class implements pawn object, including method to getPossibleMoves including pawn promotion
+/**This class implements pawn object, including method to get Possible Moves and pawn promotion
 */
 public class Pawn extends Piece {
     private boolean hasMoved; // where do we use this?
