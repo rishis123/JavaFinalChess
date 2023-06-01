@@ -80,7 +80,7 @@ public class King extends Piece {
 		}
 		
 		col = getCol() -1;
-		if (col >= 0 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (col >= 0 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
