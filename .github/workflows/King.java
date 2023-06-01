@@ -7,10 +7,13 @@ public class King extends Piece {
 		super("king", c, row, col);
 	}
 
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	    return false; // implement later
-	}
-
+	/** 
+	returns all possible moves for the implicit parameter king object, with first row of 2D array representing all possible move rows, and second row representing corresponding move columns 
+	@param b the explicitly passed in Board object containing the king
+	@return 2D array described above
+	
+	
+	*/
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
 		int[][] possibleMoves = new int[2][8]; // 8 is max possible moves for a king
