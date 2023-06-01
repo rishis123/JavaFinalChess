@@ -195,33 +195,40 @@ public class ChessBoardDisplay {
 					selected[0] = bRow;
 					selected[1] = bCol;
 					
-					System.out.println(selected[0] + " : " + selected[1]);
-					System.out.println(m);
-					
-					int[] moveMade = selected;
-					int[][] possibleMoves = m.getPossibleMoves(b);
-					for(int i = 0; i < possibleMoves[0].length; i++) {
-						System.out.println(possibleMoves[0][i] + "   " + possibleMoves[1][i]);
-						if(possibleMoves[0][i] == selected[0] && possibleMoves[1][i] == selected[1] && toggleTurn == m.getColor()) {
-							System.out.println("legal");
-							
-							m.move(bRow, bCol, b);
-							p = b.pieces();
-							System.out.println(m);
-							System.out.println(toggleTurn);
-							frame.repaint();
-							
-							toggleTurn = !toggleTurn;
-							m = null;
-						}
-						else {
-							System.out.println("illegal");
-//							m = null;
-//							i = 100;
-						}
-//						m = null;
+					if(selected[0] == m.getRow() && selected[1] == m.getCol()) {
+						m = null;
+						System.out.println("deselected");
 					}
-					System.out.println(toggleTurn);
+					else {
+						System.out.println(selected[0] + " : " + selected[1]);
+						System.out.println(m);
+						
+						int[] moveMade = selected;
+						int[][] possibleMoves = m.getPossibleMoves(b);
+						for(int i = 0; i < possibleMoves[0].length; i++) {
+							System.out.println(possibleMoves[0][i] + "   " + possibleMoves[1][i]);
+							if(possibleMoves[0][i] == selected[0] && possibleMoves[1][i] == selected[1] && toggleTurn == m.getColor()) {
+								System.out.println("legal");
+								
+								m.move(bRow, bCol, b);
+								p = b.pieces();
+								System.out.println(m);
+								System.out.println(toggleTurn);
+								frame.repaint();
+								
+								toggleTurn = !toggleTurn;
+								m = null;
+							}
+							else {
+								System.out.println("illegal");
+//								m = null;
+//								i = 100;
+							}
+//							m = null;
+						}
+						System.out.println(toggleTurn);
+					}
+					
 				}
 				
 //				if (selected[0] == -1 && m != null) {
