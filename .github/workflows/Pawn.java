@@ -1,14 +1,30 @@
+
+
+/**This class implements pawn object, including method to get Possible Moves and pawn promotion
+*/
 public class Pawn extends Piece {
-    private boolean hasMoved;
+    private boolean hasMoved; // where do we use this?
+ 
 
-	public Pawn(boolean c, int row, int col) {
-		super("pawn", c, row, col, 1);
-	}
-
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	    return true; // implement later en passant?
-	}
+	/**
+	Constructs a pawn object
 	
+	@param c the color of the pawn
+	@param row the row of the pawn
+	@param col the column of the pawn
+	
+	*/
+	public Pawn(boolean c, int row, int col) {
+		super("pawn", c, row, col);
+ 	}
+
+	/**
+	Returns all possible moves for a pawn, in 2D array, with first row representing all possible move rows, and second row representing all possible move columns
+	@param b the board of interest being passed in
+	@return the 2D array described above
+	
+	
+	*/
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
 		int[][] possibleMoves = new int[2][4]; // 4 is max possible for pawn, 1 forward, 2 forward if 2nd rank, then 2 captures
@@ -21,58 +37,59 @@ public class Pawn extends Piece {
 		int col = getCol();
 		int i = 0;//counter
 		
-		if (getColor()) {//color boolean, true is white, black is false -- need for pawn separation
+		if (!getColor()) {//color boolean, true is white, black is false -- need for pawn separation
 			if (row == 1 && board[row+1][col] == null && board[row+2][col] == null) { // we are using 0-based indexing for rows and columns
 			    possibleMoves[0][i] = row + 2; // can move 2 spaces
+			    possibleMoves[1][i] = col;
+			    i++;
+			    possibleMoves[0][i] = row + 1;
 			    possibleMoves[1][i] = col;
 			    i++;
 			}
 			if (row < 7 && board[row+1][col] == null) {
 			    possibleMoves[0][i] = row+1; // figure out pawn promotion
-			    possibleMoves[0][i] = col;
+			    possibleMoves[1][i] = col;
 			    i++;
 			}
-			if (board[row+1][col+1] != null && board[row+1][col+1].getColor() != getColor()) { // capture
+			if (col < 7 && (board[row+1][col+1] != null || (board[row+1][col+1] != null && board[row+1][col+1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row+1; 
-			    possibleMoves[0][i] = col+1;
+			    possibleMoves[1][i] = col+1;
 			    i++;
 			}
-			if (board[row+1][col-1] != null && board[row+1][col-1].getColor() != getColor()) { // capture
+			if (col > 0 && (board[row+1][col-1] != null || (board[row+1][col-1] != null && board[row+1][col-1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row+1; 
-			    possibleMoves[0][i] = col-1;
+			    possibleMoves[1][i] = col-1;
 			    i++;
 			}	
 		}
 		else { // pawn is black
 		   if (row == 6 && board[row-1][col] == null && board[row-2][col] == null) { // we are using 0-based indexing for rows and columns
-			    possibleMoves[0][i] = row -2; // can move 2 spaces
+			    possibleMoves[0][i] = row - 2; // can move 2 spaces
+			    possibleMoves[1][i] = col;
+			    i++;
+			    possibleMoves[0][i] = row - 1;
 			    possibleMoves[1][i] = col;
 			    i++;
 			}
 			if (row > 0 && board[row-1][col] == null) {
 			    possibleMoves[0][i] = row-1; // figure out pawn promotion
-			    possibleMoves[0][i] = col;
+			    possibleMoves[1][i] = col;
 			    i++;
 			}
-			if (board[row-1][col+1] != null && board[row-1][col+1].getColor() != getColor()) { // capture
+			if (col < 7 && (board[row-1][col+1] != null || (board[row-1][col+1] != null && board[row-1][col+1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row-1; 
-			    possibleMoves[0][i] = col+1;
+			    possibleMoves[1][i] = col+1;
 			    i++;
 			}
-			if (board[row-1][col-1] != null && board[row-1][col-1].getColor() != getColor()) { // capture
+			if (col > 0 && (board[row-1][col-1] != null || (board[row-1][col-1] != null && board[row-1][col-1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row-1; 
-			    possibleMoves[0][i] = col-1;
+			    possibleMoves[1][i] = col-1;
 			    i++;
 			}	
 		
 		}
 
-		if (getColor() && row == 7) { // white pawn promotion
-		   pawnPromote(); // write new method
-		}
-		if (!getColor() && row == 0) {//black pawn promotion
-	           pawnPromote(); //write new method
-		}
+	
 		
 	return possibleMoves;
 	}
@@ -80,16 +97,16 @@ public class Pawn extends Piece {
 	
 	/** 
 	This method promotes a white pawn in our 7th row or a black pawn in our 0th row to a same-colored queen, overwrites the pawn reference
+	// work in progress
 	
 	*/
 	public void pawnPromote() {
-		if (getColor() && row == 7) { // white pawn promotion
-			// where are we getting the board passed in --> would probably use setSquare method and replace it with a same color queen
-		}
-		else {
-			//same question
-		}
+	 if (true) { // white pawn in 7th row
+	 	 
+		
+		 
+		 
 		
 		
-	}
+	}}
 }
