@@ -1,3 +1,6 @@
+/**
+This class creates a piece with a given name, row and column on a board, and has several methods to get/set those values, determine the legality of moves, etc.
+*/
 public abstract class Piece {
 	private String movesList[];
 	private String name;
@@ -5,6 +8,13 @@ public abstract class Piece {
 	private int row;
 	private int col;
 	
+	/**
+	Construct a piece object
+	@param n the name of the object
+	@param c the color of the object
+	@param _row the row of the object
+	@param _col the column of the object
+	*/
 	public Piece(String n, boolean c, int _row, int _col) {
 		name = n;
 		color = c;
