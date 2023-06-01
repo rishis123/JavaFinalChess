@@ -1,13 +1,17 @@
-
+/**
+Class implements bishop piece, including method to get all possible moves.
+*/
 public class Bishop extends Piece {
 	public Bishop(boolean c, int row, int col) {
 		super("bishop", c, row, col);
 	}
 
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	    return false; // implement later
-	}
+	/**
+	Returns possible moves for bishop object (see superclass method for specifics)
+	@param b the passed in board
+	@return the 2D array representing valid moves
 	
+	*/
 	public int[][] getPossibleMoves(Board b) { // Finished for bishop
 		Piece[][] board = b.getBoard();
 		int[][] possibleMoves = new int[2][13]; // 13 is max possible # of moves for a bishop on a chessboard
