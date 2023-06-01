@@ -5,6 +5,9 @@ Make a board object, with all pieces inputted and methods to get the board, set 
 public class Board {
 	private Piece[][] board; //rows are letters, columns are numbers; top left is a8, bottom right is h1
 	
+	public Board(Piece[][] b) {
+		board = b;
+	}
 	/**
 	Construct a board, assign pieces to initial positions
 	*/
@@ -56,7 +59,14 @@ public class Board {
 	public void setSquare(Piece p, int row, int col) {
 		board[row][col] = p;
 	}
-	
+	/**
+ 	Sets the board instance variable to an already made Piece array -- useful for checking for check. 
+ 	@param b the Piece array being passed in
+ 	
+ 	*/
+	public void setBoard(Piece[][] b) {
+		board = b;
+	}
 	/**
  	Returns the piece at a specified square / position in the 2D array
  	
