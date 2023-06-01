@@ -2,8 +2,7 @@
 */
 public class Pawn extends Piece {
     private boolean hasMoved; // where do we use this?
-	private boolean c;
-
+ 
 
 	/**
 	Constructs a pawn object
@@ -15,8 +14,7 @@ public class Pawn extends Piece {
 	*/
 	public Pawn(boolean c, int row, int col) {
 		super("pawn", c, row, col);
-		this.c = c;
-	}
+ 	}
 
 	/**
 	Returns all possible moves for a pawn, in 2D array, with first row representing all possible move rows, and second row representing all possible move columns
