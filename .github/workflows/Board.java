@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class Board {
 	private Piece[][] board; //rows are letters, columns are numbers; top left is a8, bottom right is h1
 	
+	public Board(String test) {
+		board = new Piece[8][8];
+	}
+	
 	public Board() {
 		board = new Piece[8][8];
 		for(int i = 0; i < 8; i++) {
@@ -30,8 +34,8 @@ public class Board {
 				board[0][i] = new King(false, 0, i);
 			}
 		}
-	}
 	
+	}
 	public Piece[][] getBoard(){
 		return board;
 	}

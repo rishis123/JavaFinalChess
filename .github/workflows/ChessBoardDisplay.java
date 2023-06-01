@@ -99,50 +99,50 @@ public class ChessBoardDisplay {
 				for(Piece el : p) {
 					if(el.getName().equals("pawn")) {
 						if(el.getColor()) { //white pawns
-							g.drawImage(whitePawn, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whitePawn, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black pawns
-							g.drawImage(blackPawn, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackPawn, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("rook")) {
 						if(el.getColor()) { //white rooks
-							g.drawImage(whiteRook, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteRook, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black rooks
-							g.drawImage(blackRook, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackRook, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("knight")) {
 						if(el.getColor()) { //white knights
-							g.drawImage(whiteKnight, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteKnight, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black knights
-							g.drawImage(blackKnight, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackKnight, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("bishop")) {
 						if(el.getColor()) { //white bishops
-							g.drawImage(whiteBishop, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteBishop, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black bishops
-							g.drawImage(blackBishop, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackBishop, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("king")) {
 						if(el.getColor()) { //white kings
-							g.drawImage(whiteKing, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteKing, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black kings
-							g.drawImage(blackKing, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackKing, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("queen")) {
 						if(el.getColor()) { //white queens
-							g.drawImage(whiteQueen, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteQueen, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black queens
-							g.drawImage(blackQueen, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackQueen, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 				}
@@ -182,9 +182,10 @@ public class ChessBoardDisplay {
 			public void mouseClicked(MouseEvent e) {
 				int bCol = e.getX() / 60;
 				int bRow = (e.getY() - 30) / 60;
-				System.out.println(boardX + " | " + boardY);
-				System.out.println(getPiece(e.getY() - 30, e.getX())); // -30 bc its bugged for some reason
-				m = getPiece(e.getY() - 30, e.getX());
+
+				System.out.println(bRow + " | " + bCol);
+				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
+				m = getPiece(e.getX(), e.getY() - 30);
 				if (selected[0] == -1 && m != null) {
 					selected[0] = bRow;
 					selected[1] = bCol;
