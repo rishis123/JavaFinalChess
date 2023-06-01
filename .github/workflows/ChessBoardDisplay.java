@@ -40,8 +40,8 @@ public class ChessBoardDisplay {
 	@return the piece at the specified coordinates
 	*/
 	public static Piece getPiece(int x, int y) {
-		int row = x / 60;
-		int col = y / 60;
+		int col = x / 60;
+		int row = y / 60;
 		for(Piece el : p) {
 			if(el.getRow() == row && el.getCol() == col) {
 				return el;
@@ -180,26 +180,25 @@ public class ChessBoardDisplay {
 		frame.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int boardX = e.getX() / 60;
-				int boardY = (e.getY() - 30) / 60;
+				int bCol = e.getX() / 60;
+				int bRow = (e.getY() - 30) / 60;
 				System.out.println(boardX + " | " + boardY);
-				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
-				m = getPiece(e.getX(), e.getY() - 30);
+				System.out.println(getPiece(e.getY() - 30, e.getX())); // -30 bc its bugged for some reason
+				m = getPiece(e.getY() - 30, e.getX());
 				if (selected[0] == -1 && m != null) {
-					selected[0] = boardX;
-					selected[1] = boardY;
+					selected[0] = bRow;
+					selected[1] = bCol;
 					System.out.println(selected[0] + " - " + selected[1]);
 				}
-				else if (selected[0] != -1 && boardX <= 7 && boardY <= 7 && boardX >= 0 && boardY >= 0 &&
-						b.getBoard()[selected[0]][selected[1]].inPossibleMoves(boardX, boardY, b)) { //add check for if piece is there
+				else if (selected[0] != -1 && b.getBoard()[selected[0]][selected[1]].inPossibleMoves(bRow, bCol, b)) { //add check for if piece is there
 					System.out.println("aha");
-					if (b.getBoard()[boardX][boardY] != null) { //taking
-						p.remove(b.getBoard()[boardX][boardY]);
+					if (b.getBoard()[bRow][bCol] != null) { //taking
+						p.remove(b.getBoard()[bRow][bCol]);
 					}
-					b.getBoard()[boardX][boardY] = b.getBoard()[selected[0]][selected[1]]; 
+					b.getBoard()[bRow][bCol] = b.getBoard()[selected[0]][selected[1]]; 
 					b.getBoard()[selected[0]][selected[1]] = null;
-					b.getBoard()[boardX][boardY].setRow(boardX);
-					b.getBoard()[boardX][boardY].setCol(boardY); //switching
+					b.getBoard()[bRow][bCol].setRow(bRow);
+					b.getBoard()[bRow][bCol].setCol(bCol); //switching
 					frame.repaint();
 					selected[0] = -1;
 					selected[1] = -1;
