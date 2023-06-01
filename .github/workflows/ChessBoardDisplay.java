@@ -30,6 +30,7 @@ public class ChessBoardDisplay {
 	private static ArrayList<Piece> p = b.pieces();
 	private static Piece m = null;
 	private static int[] selected = {-1, -1};
+	private static boolean toggleTurn = true;
 	
 	
 	/**
@@ -151,29 +152,29 @@ public class ChessBoardDisplay {
 		
 		panel.setLayout(null);
 		
-		ArrayList<JButton> letters = new ArrayList<JButton>();
-		String lets = "abcdefgh";
-		for(int i = 0; i < 8; i++) {
-			letters.add(new JButton(lets.substring(i, i + 1)));
-		}
-		int i = 10;
-		for(JButton el : letters) {
-			el.setBounds(500, i, 50, 50);
-			panel.add(el);
-			i += 50;
-		}
-		
-		ArrayList<JButton> numbers = new ArrayList<JButton>();
-		String nums = "12345678";
-		for(int j = 0; j < 8; j++) {
-			numbers.add(new JButton(nums.substring(j, j + 1)));
-		}
-		int j = 10;
-		for(JButton el : numbers) {
-			el.setBounds(550, j, 50, 50);
-			panel.add(el);
-			j += 50;
-		}
+//		ArrayList<JButton> letters = new ArrayList<JButton>();
+//		String lets = "abcdefgh";
+//		for(int i = 0; i < 8; i++) {
+//			letters.add(new JButton(lets.substring(i, i + 1)));
+//		}
+//		int i = 10;
+//		for(JButton el : letters) {
+//			el.setBounds(500, i, 50, 50);
+//			panel.add(el);
+//			i += 50;
+//		}
+//		
+//		ArrayList<JButton> numbers = new ArrayList<JButton>();
+//		String nums = "12345678";
+//		for(int j = 0; j < 8; j++) {
+//			numbers.add(new JButton(nums.substring(j, j + 1)));
+//		}
+//		int j = 10;
+//		for(JButton el : numbers) {
+//			el.setBounds(550, j, 50, 50);
+//			panel.add(el);
+//			j += 50;
+//		}
 		
 		frame.add(panel);
 		
@@ -184,30 +185,67 @@ public class ChessBoardDisplay {
 				int bRow = (e.getY() - 30) / 60;
 
 				System.out.println(bRow + " | " + bCol);
-				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
-				m = getPiece(e.getX(), e.getY() - 30);
-				if (selected[0] == -1 && m != null) {
-					selected[0] = bRow;
-					selected[1] = bCol;
-					System.out.println(selected[0] + " - " + selected[1]);
-				}
-				else if (selected[0] != -1 && b.getBoard()[selected[0]][selected[1]].inPossibleMoves(bRow, bCol, b)) { //add check for if piece is there
-					System.out.println("aha");
-					if (b.getBoard()[bRow][bCol] != null) { //taking
-						p.remove(b.getBoard()[bRow][bCol]);
-					}
-					b.getBoard()[bRow][bCol] = b.getBoard()[selected[0]][selected[1]]; 
-					b.getBoard()[selected[0]][selected[1]] = null;
-					b.getBoard()[bRow][bCol].setRow(bRow);
-					b.getBoard()[bRow][bCol].setCol(bCol); //switching
-					frame.repaint();
-					selected[0] = -1;
-					selected[1] = -1;
+//				m = getPiece(e.getX(), e.getY() - 30); // -30 bc its bugged for some reason
+//				System.out.println(m);
+				if(m == null) {
+					m = getPiece(e.getX(), e.getY() - 30); // -30 bc its bugged for some reason
+					System.out.println(m);
 				}
 				else {
-					selected[0] = -1;
-					selected[1] = -1;
+					selected[0] = bRow;
+					selected[1] = bCol;
+					
+					System.out.println(selected[0] + " : " + selected[1]);
+					System.out.println(m);
+					
+					int[] moveMade = selected;
+					int[][] possibleMoves = m.getPossibleMoves(b);
+					for(int i = 0; i < possibleMoves[0].length; i++) {
+						System.out.println(possibleMoves[0][i] + "   " + possibleMoves[1][i]);
+						if(possibleMoves[0][i] == selected[0] && possibleMoves[1][i] == selected[1] && toggleTurn == m.getColor()) {
+							System.out.println("legal");
+							
+							m.move(bRow, bCol, b);
+							p = b.pieces();
+							System.out.println(m);
+							System.out.println(toggleTurn);
+							frame.repaint();
+							
+							toggleTurn = !toggleTurn;
+							m = null;
+						}
+						else {
+							System.out.println("illegal");
+//							m = null;
+//							i = 100;
+						}
+//						m = null;
+					}
+					System.out.println(toggleTurn);
 				}
+				
+//				if (selected[0] == -1 && m != null) {
+//					selected[0] = bRow;
+//					selected[1] = bCol;
+//					System.out.println(selected[0] + " -- " + selected[1]);
+//				}
+//				else if (selected[0] != -1 && b.getBoard()[selected[0]][selected[1]].inPossibleMoves(bRow, bCol, b)) { //add check for if piece is there
+//					System.out.println("aha");
+//					if (b.getBoard()[bRow][bCol] != null) { //taking
+//						p.remove(b.getBoard()[bRow][bCol]);
+//					}
+//					b.getBoard()[bRow][bCol] = b.getBoard()[selected[0]][selected[1]]; 
+//					b.getBoard()[selected[0]][selected[1]] = null;
+//					b.getBoard()[bRow][bCol].setRow(bRow);
+//					b.getBoard()[bRow][bCol].setCol(bCol); //switching
+//					frame.repaint();
+//					selected[0] = -1;
+//					selected[1] = -1;
+//				}
+//				else {
+//					selected[0] = -1;
+//					selected[1] = -1;
+//				}
 				
 			}
 			
