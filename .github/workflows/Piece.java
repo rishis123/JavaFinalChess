@@ -12,24 +12,47 @@ public abstract class Piece {
 		col = _col;
 	}
 	
-	//basic setters/getters
-
+/**
+return name of piece
+@return see above
+*/
 	public String getName() {
 		return name;
 	}
+	/**
+	return color of piece
+	@return true is white, false is black
+	*/
 	public boolean getColor() {
 		return color;
 	}
-//removed value - no point
+	
+
+	/**
+	return column of piece
+	@return see above
+	*/
 	public int getCol() {
 	    return col;
 	}
+	/**
+	return row of piece
+	@return see above
+	*/
 	public int getRow() {
 	    return row;
 	}
+	/**
+	set column to inputted value
+	@param c the desired column
+	*/
 	public void setCol(int c) {
 		col = c;
 	}
+	/**
+	set row to inputted value
+	@param r the desired row
+	*/
 	public void setRow(int r) {
 		row = r;
 	}
@@ -59,8 +82,10 @@ public abstract class Piece {
 		}
 		return false;
 	}
+	/**
 	
-	//returns true if move is made, false if not, updates the row/col of piece object, mb change later?
+	*/
+	
 	public boolean move(int toRow, int toCol, Board b) { // is toRow and toCol the final row or col or intiial
 		if (isLegal(toRow, toCol, b)) {
 		    Piece p = b.getSquare(row, col);
