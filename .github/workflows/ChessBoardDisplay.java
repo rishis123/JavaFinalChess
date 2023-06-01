@@ -40,8 +40,8 @@ public class ChessBoardDisplay {
 	@return the piece at the specified coordinates
 	*/
 	public static Piece getPiece(int x, int y) {
-		int row = x / 60;
-		int col = y / 60;
+		int col = x / 60;
+		int row = y / 60;
 		for(Piece el : p) {
 			if(el.getRow() == row && el.getCol() == col) {
 				return el;
@@ -99,50 +99,50 @@ public class ChessBoardDisplay {
 				for(Piece el : p) {
 					if(el.getName().equals("pawn")) {
 						if(el.getColor()) { //white pawns
-							g.drawImage(whitePawn, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whitePawn, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black pawns
-							g.drawImage(blackPawn, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackPawn, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("rook")) {
 						if(el.getColor()) { //white rooks
-							g.drawImage(whiteRook, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteRook, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black rooks
-							g.drawImage(blackRook, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackRook, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("knight")) {
 						if(el.getColor()) { //white knights
-							g.drawImage(whiteKnight, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteKnight, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black knights
-							g.drawImage(blackKnight, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackKnight, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("bishop")) {
 						if(el.getColor()) { //white bishops
-							g.drawImage(whiteBishop, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteBishop, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black bishops
-							g.drawImage(blackBishop, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackBishop, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("king")) {
 						if(el.getColor()) { //white kings
-							g.drawImage(whiteKing, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteKing, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black kings
-							g.drawImage(blackKing, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackKing, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 					if(el.getName().equals("queen")) {
 						if(el.getColor()) { //white queens
-							g.drawImage(whiteQueen, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(whiteQueen, el.getCol() * 60, el.getRow() * 60, this);
 						}
 						if(!el.getColor()) { //black queens
-							g.drawImage(blackQueen, el.getRow() * 60, el.getCol() * 60, this);
+							g.drawImage(blackQueen, el.getCol() * 60, el.getRow() * 60, this);
 						}
 					}
 				}
@@ -180,26 +180,25 @@ public class ChessBoardDisplay {
 		frame.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int boardX = e.getX() / 60;
-				int boardY = (e.getY() - 30) / 60;
-				System.out.println(boardX + " | " + boardY);
+				int bCol = e.getX() / 60;
+				int bRow = (e.getY() - 30) / 60;
+				System.out.println(bRow + " | " + bCol);
 				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
 				m = getPiece(e.getX(), e.getY() - 30);
 				if (selected[0] == -1 && m != null) {
-					selected[0] = boardX;
-					selected[1] = boardY;
+					selected[0] = bRow;
+					selected[1] = bCol;
 					System.out.println(selected[0] + " - " + selected[1]);
 				}
-				else if (selected[0] != -1 && boardX <= 7 && boardY <= 7 && boardX >= 0 && boardY >= 0 &&
-						b.getBoard()[selected[0]][selected[1]].inPossibleMoves(boardX, boardY, b)) { //add check for if piece is there
+				else if (selected[0] != -1 && b.getBoard()[selected[0]][selected[1]].inPossibleMoves(bRow, bCol, b)) { //add check for if piece is there
 					System.out.println("aha");
-					if (b.getBoard()[boardX][boardY] != null) { //taking
-						p.remove(b.getBoard()[boardX][boardY]);
+					if (b.getBoard()[bRow][bCol] != null) { //taking
+						p.remove(b.getBoard()[bRow][bCol]);
 					}
-					b.getBoard()[boardX][boardY] = b.getBoard()[selected[0]][selected[1]]; 
+					b.getBoard()[bRow][bCol] = b.getBoard()[selected[0]][selected[1]]; 
 					b.getBoard()[selected[0]][selected[1]] = null;
-					b.getBoard()[boardX][boardY].setRow(boardX);
-					b.getBoard()[boardX][boardY].setCol(boardY); //switching
+					b.getBoard()[bRow][bCol].setRow(bRow);
+					b.getBoard()[bRow][bCol].setCol(bCol); //switching
 					frame.repaint();
 					selected[0] = -1;
 					selected[1] = -1;
