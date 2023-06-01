@@ -7,17 +7,13 @@ public class Rook extends Piece {
 	public Rook(boolean c, int row, int col) {
 		super("rook", c, row, col);
 	}
-
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-		boolean found = false;
-		int i = 0;
-		int[][] possibleMoves = getPossibleMoves(_b);
-	   	while (!found && i < possibleMoves[0].length) {
-			if (possibleMoves[0][i] == toRow && possibleMoves[1][i] == toCol) { return true; }
-			else { return false; }
-		}
-	   	return false;
-	}
+	
+	/**
+	Returns 2D array, with first row representing rows of all possible moves, and second row represents corresponding columns of all possible moves
+	@param b the passed in board with our piece
+	@return the 2D array described above.
+	
+	*/
 	
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
