@@ -6,28 +6,28 @@ public class Board {
 	public Board() {
 		board = new Piece[8][8];
 		for(int i = 0; i < 8; i++) {
-			board[i][6] = new Pawn(true, i, 6);
-			board[i][1] = new Pawn(false, i, 1);
+			board[6][i] = new Pawn(true, 6, i);
+			board[1][i] = new Pawn(false, 1, i);
 			
 			if(i == 0 || i == 7) {
-				board[i][7] = new Rook(true, i, 7);
-				board[i][0] = new Rook(false, i, 0);
+				board[7][i] = new Rook(true, 7, i);
+				board[0][i] = new Rook(false, 0, i);
 			}
 			if(i == 1 || i == 6) {
-				board[i][7] = new Knight(true, i, 7);
-				board[i][0] = new Knight(false, i, 0);
+				board[7][i] = new Knight(true, 7, i);
+				board[0][i] = new Knight(false, 0, i);
 			}
 			if(i == 2 || i == 5) {
-				board[i][7] = new Bishop(true, i, 7);
-				board[i][0] = new Bishop(false, i, 0);
+				board[7][i] = new Bishop(true, 7, i);
+				board[0][i] = new Bishop(false, 0, i);
 			}
 			if(i == 3) {
-				board[i][7] = new Queen(true, i, 7);
-				board[i][0] = new Queen(false, i, 0);
+				board[7][i] = new Queen(true, 7, i);
+				board[0][i] = new Queen(false, 0, i);
 			}
 			if(i == 4) {
-				board[i][7] = new King(true, i, 7);
-				board[i][0] = new King(false, i, 0);
+				board[7][i] = new King(true, 7, i);
+				board[0][i] = new King(false, 0, i);
 			}
 		}
 	}
