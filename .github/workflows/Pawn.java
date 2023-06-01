@@ -83,12 +83,7 @@ public class Pawn extends Piece {
 		
 		}
 
-		if (c && row == 7) { // white pawn promotion
-		   pawnPromote(); // write new method
-		}
-		if (!c && row == 0) {//black pawn promotion
-	           pawnPromote(); //write new method
-		}
+	
 		
 	return possibleMoves;
 	}
@@ -96,9 +91,15 @@ public class Pawn extends Piece {
 	
 	/** 
 	This method promotes a white pawn in our 7th row or a black pawn in our 0th row to a same-colored queen, overwrites the pawn reference
+	// work in progress
 	
 	*/
 	public void pawnPromote() {
+	 if (c) { // white pawn in 7th row
+	 	 
+		
+		 
+		 
 		
 		
 	}
