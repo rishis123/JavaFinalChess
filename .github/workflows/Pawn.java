@@ -83,10 +83,10 @@ public class Pawn extends Piece {
 		
 		}
 
-		if (getColor() && row == 7) { // white pawn promotion
+		if (c && row == 7) { // white pawn promotion
 		   pawnPromote(); // write new method
 		}
-		if (!getColor() && row == 0) {//black pawn promotion
+		if (!c && row == 0) {//black pawn promotion
 	           pawnPromote(); //write new method
 		}
 		
@@ -99,6 +99,7 @@ public class Pawn extends Piece {
 	
 	*/
 	public void pawnPromote() {
+		
 		
 	}
 }
