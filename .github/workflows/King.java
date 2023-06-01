@@ -1,3 +1,7 @@
+/**
+The King class implements the king piece, including methods to return a 2D array of all possible moves for the king at each turn.
+*/
+
 public class King extends Piece {
 	public King(boolean c, int row, int col) {
 		super("king", c, row, col);
