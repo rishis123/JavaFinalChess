@@ -1,5 +1,12 @@
 public class Game {
 
+	/**
+	return the location(s) of a piece with a specific name and color in the passed in board object
+	@param _b the passed in board object
+	@param color the color of the desired piece(s)
+	@param name the name of the desired piece(s)
+	@return the position of the desired piece(s)
+	*/
     public static int[][] findPieces(Board _b, boolean color, String name) {
         Piece[][] b = _b.getBoard();
         int[][] pieceLocations = new int[2][8]; //8 pawns is max
@@ -23,6 +30,12 @@ public class Game {
         return pieceLocations;     
     }
     
+	/**
+	determines if a move is a check to opposing king
+	@param _b the Board containing the opposing king
+	@param color the color of the opposing king // verify opposing?
+	@return whether or not it is a check
+	*/
     public static boolean checkCheck(Board _b, boolean color) {
         Piece[][] b = _b.getBoard();
 		int[][] kingLoc = findPieces(_b, color, "king"); // finds the location of the king
