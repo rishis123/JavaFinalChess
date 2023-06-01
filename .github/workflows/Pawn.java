@@ -37,7 +37,7 @@ public class Pawn extends Piece {
 		int col = getCol();
 		int i = 0;//counter
 		
-		if (c) {//color boolean, true is white, black is false -- need for pawn separation
+		if (getColor()) {//color boolean, true is white, black is false -- need for pawn separation
 			if (row == 1 && board[row+1][col] == null && board[row+2][col] == null) { // we are using 0-based indexing for rows and columns
 			    possibleMoves[0][i] = row + 2; // can move 2 spaces
 			    possibleMoves[1][i] = col;
