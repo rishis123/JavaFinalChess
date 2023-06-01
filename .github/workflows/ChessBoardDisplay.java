@@ -21,11 +21,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.*;
+import java.applet.Applet;
+
 
 public class ChessBoardDisplay {
 	private static Board b = new Board();
 	private static ArrayList<Piece> p = b.pieces();
 	private static Piece m = null;
+	private static int[] selected = {-1, -1};
 	
 	
 	/**
@@ -91,7 +95,6 @@ public class ChessBoardDisplay {
 					}
 				}
 				
-				
 //				System.out.println(p.toString());
 				for(Piece el : p) {
 					if(el.getName().equals("pawn")) {
@@ -144,9 +147,6 @@ public class ChessBoardDisplay {
 					}
 				}
 			}
-			
-			
-			
 		};
 		
 		panel.setLayout(null);
@@ -180,10 +180,35 @@ public class ChessBoardDisplay {
 		frame.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println(e.getX() / 60 + " | " + ((int) ((e.getY() - 30) / 60)) );
-				System.out.println(getPiece(e.getX(), e.getY() - 30));
-				
+				int boardX = e.getX() / 60;
+				int boardY = (e.getY() - 30) / 60;
+				System.out.println(boardX + " | " + boardY);
+				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
 				m = getPiece(e.getX(), e.getY() - 30);
+				if (selected[0] == -1 && m != null) {
+					selected[0] = boardX;
+					selected[1] = boardY;
+					System.out.println(selected[0] + " - " + selected[1]);
+				}
+				else if (selected[0] != -1 && boardX <= 7 && boardY <= 7 && boardX >= 0 && boardY >= 0 &&
+						b.getBoard()[selected[0]][selected[1]].inPossibleMoves(boardX, boardY, b)) { //add check for if piece is there
+					System.out.println("aha");
+					if (b.getBoard()[boardX][boardY] != null) { //taking
+						p.remove(b.getBoard()[boardX][boardY]);
+					}
+					b.getBoard()[boardX][boardY] = b.getBoard()[selected[0]][selected[1]]; 
+					b.getBoard()[selected[0]][selected[1]] = null;
+					b.getBoard()[boardX][boardY].setRow(boardX);
+					b.getBoard()[boardX][boardY].setCol(boardY); //switching
+					frame.repaint();
+					selected[0] = -1;
+					selected[1] = -1;
+				}
+				else {
+					selected[0] = -1;
+					selected[1] = -1;
+				}
+				
 			}
 			
 			@Override

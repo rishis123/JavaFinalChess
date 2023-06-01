@@ -80,6 +80,6 @@ public class King extends Piece {
 		}
 
 		return possibleMoves;
-		
+
 	}
 }

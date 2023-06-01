@@ -27,10 +27,28 @@ public abstract class Piece {
 	public int getRow() {
 	    return row;
 	}
+	public void setCol(int c) {
+		col = c;
+	}
+	public void setRow(int r) {
+		row = r;
+	}
 	
 	//returns true if the move toRow, toCol is legal
 	public abstract boolean isLegal(int toRow, int toCol, Board _b);
 	public abstract int[][] getPossibleMoves(Board b);
+	
+	public boolean inPossibleMoves(int r, int c, Board b) {
+		int[][] possibleMoves = getPossibleMoves(b);
+		int i = 0;
+		while (i < possibleMoves[0].length && possibleMoves[0][i] != -1) {
+			if (possibleMoves[0][i] == r && possibleMoves[1][i] == c) {
+				return true;
+			}
+			i++;
+		}
+		return false;
+	}
 	
 	//returns true if move is made, false if not, updates the row/col of piece object, mb change later?
 	public boolean move(int toRow, int toCol, Board b) { // is toRow and toCol the final row or col or intiial
