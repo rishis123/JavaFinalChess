@@ -1,5 +1,7 @@
+/**This class implements pawn object, including method to getPossibleMoves including pawn promotion
+*/
 public class Pawn extends Piece {
-    private boolean hasMoved;
+    private boolean hasMoved; // where do we use this?
 	private boolean c;
 
 
@@ -16,7 +18,13 @@ public class Pawn extends Piece {
 		this.c = c;
 	}
 
+	/**
+	Returns all possible moves for a pawn, in 2D array, with first row representing all possible move rows, and second row representing all possible move columns
+	@param b the board of interest being passed in
+	@return the 2D array described above
 	
+	
+	*/
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
 		int[][] possibleMoves = new int[2][4]; // 4 is max possible for pawn, 1 forward, 2 forward if 2nd rank, then 2 captures
