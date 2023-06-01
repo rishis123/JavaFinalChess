@@ -118,12 +118,5 @@ public int[][] getPossibleMoves(Board b) {
 	
 	
 	
-	/** 
-	This method promotes a white pawn in our 7th row or a black pawn in our 0th row to a same-colored queen, overwrites the pawn reference
-	// work in progress
-	
-	*/
-	public void pawnPromote() {
-	
-	}
+	//moving pawnPromote method to piece class -- contains method for movement.
 }
