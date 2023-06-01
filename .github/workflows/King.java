@@ -20,14 +20,14 @@ public class King extends Piece {
 		int i = 0;
 		
 		row = getRow() -1 ;
-		if (row >= 0 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row >= 0 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
 		}
 		
 		row = getRow() + 1;
-		if (row <= 7 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row <= 7 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -35,7 +35,7 @@ public class King extends Piece {
 		
 		row = getRow() -1;
 		col = getCol() - 1;
-		if (row >= 0 && col >= 0 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row >= 0 && col >= 0 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -43,7 +43,7 @@ public class King extends Piece {
 		
 		row = getRow() - 1;
 		col = getCol() +1;
-		if (row >= 0 && col <= 7 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row >= 0 && col <= 7 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -51,14 +51,14 @@ public class King extends Piece {
 		
 		row = getRow() + 1;
 		col = getCol() -1;
-		if (row <= 7 && col >=0 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row <= 7 && col >=0 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
 		}
 		row = getRow() + 1;
 		col = getCol() + 1;
-		if (row <= 7 && col <=7 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (row <= 7 && col <=7 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -66,7 +66,7 @@ public class King extends Piece {
 		
 		row = getRow();
 		col = getCol() + 1;
-		if (col <= 7 && (board[row][col] == null || (board[row][col].getColor() ! = getColor()))) {
+		if (col <= 7 && (board[row][col] == null || (board[row][col].getColor() != getColor()))) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
