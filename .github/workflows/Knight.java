@@ -1,17 +1,31 @@
+/**
+Implements a knight piece and finds all possible moves for it.
+*/
 public class Knight extends Piece {
 	private int currRow; 
 	private int currCol;
 	private String[] possibleMoves;
 	
+	/**
+	Constructs a knight object
+	@param c the color of the knight
+	@param row the row of the knight
+	@param col the column of the knight
+	*/
 	public Knight(boolean c, int row, int col) {
 		super("knight", c, row, col);
 		currRow = row;
 		currCol = col;
 	}
 	
-	public int[][] getPossibleMoves(Board b) { // fully done for knight
+	/**
+	Returns all possible moves for knight (see superclass method for further details)
+	@param b the board passed in
+	@return the 2D array representing all possible moves.
+	*/
+	public int[][] getPossibleMoves(Board b) { 
 		Piece[][] board = b.getBoard();
-		int[][] possibleMoves = new int[2][8]; // 8 is max possible moves for a knight
+		int[][] possibleMoves = new int[2][8]; // 8 is max possible moves for a knight in middle of board
 		for (int i = 0; i < possibleMoves[0].length; i++) {
 			possibleMoves[0][i] = -1;
 			possibleMoves[1][i] = -1;
