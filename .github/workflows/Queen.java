@@ -1,13 +1,23 @@
+/*This class implements a queen piece, including methods to get all possible moves.
+*/
 public class Queen extends Piece {
   
+	/** 
+	Constructs a queen object
+	@param c the color of the queen
+	@param row the row of the queen
+	@param col the column of the queen
+	*/
 	public Queen(boolean c, int row, int col) {
-		  super("queen", c, row, col); // I don't remember what this meant can we doublecheck
+		  super("queen", c, row, col);  
 	}
 	
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	    return false; // implement later
-	}
+	/**
+	Returns all possible moves of the queen (see superclass for more detailed explanation to minimize redundant explanations)
+	@param b the passed in board
+	@return the 2D array containing all possible moves of the queen
 	
+	*/
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
 		int[][] possibleMoves = new int[2][27]; // 27 is max possible moves for a queen
