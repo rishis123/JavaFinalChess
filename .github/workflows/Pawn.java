@@ -23,8 +23,10 @@ public class Pawn extends Piece {
 	
 	
 	*/
-	public int[][] getPossibleMoves(Board b) {
+public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();
+		Board checkBoard = new Board(b.getBoard());;
+		
 		int[][] possibleMoves = new int[2][4]; // 4 is max possible for pawn, 1 forward, 2 forward if 2nd rank, then 2 captures
 		for (int i = 0; i < possibleMoves[0].length; i++) {
 			possibleMoves[0][i] = -1;
@@ -37,54 +39,83 @@ public class Pawn extends Piece {
 		
 		if (!getColor()) {//color boolean, true is white, black is false -- need for pawn separation
 			if (row == 1 && board[row+1][col] == null && board[row+2][col] == null) { // we are using 0-based indexing for rows and columns
-			    possibleMoves[0][i] = row + 2; // can move 2 spaces
-			    possibleMoves[1][i] = col;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row + 2; // can move 2 spaces
+					possibleMoves[1][i] = col;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (row < 7 && board[row+1][col] == null) {
-			    possibleMoves[0][i] = row+1; // figure out pawn promotion
-			    possibleMoves[0][i] = col;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row + 1; // can move 2 spaces
+					possibleMoves[1][i] = col;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (col < 7 && (board[row+1][col+1] != null || (board[row+1][col+1] != null && board[row+1][col+1].getColor() != getColor()))) { // capture
-			   possibleMoves[0][i] = row+1; 
-			    possibleMoves[0][i] = col+1;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row + 1; // can move 2 spaces
+					possibleMoves[1][i] = col + 1;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (col > 0 && (board[row+1][col-1] != null || (board[row+1][col-1] != null && board[row+1][col-1].getColor() != getColor()))) { // capture
-			   possibleMoves[0][i] = row+1; 
-			    possibleMoves[0][i] = col-1;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row + 1; // can move 2 spaces
+					possibleMoves[1][i] = col - 1;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}	
 		}
 		else { // pawn is black
 		   if (row == 6 && board[row-1][col] == null && board[row-2][col] == null) { // we are using 0-based indexing for rows and columns
-			    possibleMoves[0][i] = row -2; // can move 2 spaces
-			    possibleMoves[1][i] = col;
-			    i++;
+			   move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row - 2; // can move 2 spaces
+					possibleMoves[1][i] = col;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (row > 0 && board[row-1][col] == null) {
-			    possibleMoves[0][i] = row-1; // figure out pawn promotion
-			    possibleMoves[0][i] = col;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row - 2; // can move 2 spaces
+					possibleMoves[1][i] = col;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (col < 7 && (board[row-1][col+1] != null || (board[row-1][col+1] != null && board[row-1][col+1].getColor() != getColor()))) { // capture
-			   possibleMoves[0][i] = row-1; 
-			    possibleMoves[0][i] = col+1;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row - 1; // can move 2 spaces
+					possibleMoves[1][i] = col + 1;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}
 			if (col > 0 && (board[row-1][col-1] != null || (board[row-1][col-1] != null && board[row-1][col-1].getColor() != getColor()))) { // capture
-			   possibleMoves[0][i] = row-1; 
-			    possibleMoves[0][i] = col-1;
-			    i++;
+				move(row+1, col, checkBoard);
+				if (!Game.checkCheck(checkBoard, getColor())) {
+					possibleMoves[0][i] = row - 1; // can move 2 spaces
+					possibleMoves[1][i] = col - 1;
+					i++;
+				}
+				checkBoard.setBoard(b.getBoard());
 			}	
-		
-		}
-
-	
-		
+		}	
 	return possibleMoves;
 	}
+	
 	
 	
 	/** 
@@ -93,12 +124,6 @@ public class Pawn extends Piece {
 	
 	*/
 	public void pawnPromote() {
-	 if (c) { // white pawn in 7th row
-	 	 
-		
-		 
-		 
-		
-		
-	}}
+	
+	}
 }
