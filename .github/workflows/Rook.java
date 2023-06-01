@@ -1,3 +1,8 @@
+/**
+The rook class implements the rook piece, including methods to determine if a certain move is legal and to return a 2D array of all possible moves for the rook at each turn.
+*/
+
+
 public class Rook extends Piece {
 	public Rook(boolean c, int row, int col) {
 		super("rook", c, row, col);
