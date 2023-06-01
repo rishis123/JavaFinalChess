@@ -101,8 +101,5 @@ public class Knight extends Piece {
 	}
 		
 
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	   	 return false; 
-	} 
-	// no need to overload move method??
+	 
 }
