@@ -75,22 +75,19 @@ return name of piece
 	public abstract int[][] getPossibleMoves(Board b);
 	
 	/**
-	returns true if an inputted move is in the 2D array from getPossibleMoves, else returns false and is invalid
-	@param r the row for the piece to move to
+	makes a move on the board by moving the piecce to the square (toRow, toCol), and setting the square it came from to null
+	@param toRow the row for the piece to move to
 	@param c the column for the piece to move to
 	@param b the passed in board
 	@return whether or not the move is in the array
 	*/
-	public boolean inPossibleMoves(int r, int c, Board b) {
-		int[][] possibleMoves = getPossibleMoves(b);
-		int i = 0;
-		while (i < possibleMoves[0].length && possibleMoves[0][i] != -1) {
-			if (possibleMoves[0][i] == r && possibleMoves[1][i] == c) {
-				return true;
-			}
-			i++;
-		}
-		return false;
+	
+	public void move(int toRow, int toCol, Board b) { 
+		Piece p = b.getSquare(row, col);
+		b.setSquare(null, row, col);
+		b.setSquare(p, toRow, toCol);
+		col = toCol;
+		row = toRow;
 	}
 	/**
 	
