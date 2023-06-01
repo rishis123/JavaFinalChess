@@ -5,9 +5,6 @@ public class Pawn extends Piece {
 		super("pawn", c, row, col);
 	}
 
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	    return true; // implement later en passant?
-	}
 	
 	public int[][] getPossibleMoves(Board b) {
 		Piece[][] board = b.getBoard();

@@ -182,6 +182,7 @@ public class ChessBoardDisplay {
 			public void mouseClicked(MouseEvent e) {
 				int bCol = e.getX() / 60;
 				int bRow = (e.getY() - 30) / 60;
+
 				System.out.println(bRow + " | " + bCol);
 				System.out.println(getPiece(e.getX(), e.getY() - 30)); // -30 bc its bugged for some reason
 				m = getPiece(e.getX(), e.getY() - 30);

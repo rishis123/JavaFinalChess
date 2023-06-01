@@ -24,12 +24,7 @@ public class Knight extends Piece {
 		//Let's start with the two up, one left, using if functionality since don't need while to go through
 		row = row + 2;
 		col = col-1;
-		if (row <= 7 && col >= 0 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row <= 7 && col>= 0 && board[row][col].getColor() != getColor()) {
+		if (row <= 7 && col >= 0 && (board[row][col] == null || board[row][col].getColor() != getColor()) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -39,26 +34,17 @@ public class Knight extends Piece {
 		
 		row = getRow() + 2;
 		col = getCol() + 1;
-		if (row <= 7 && col <= 7 && board[row][col] == null) {
+		if (row <= 7 && col <= 7 && (board[row][col] == null || board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
 		}
-		if (row <= 7 && col <= 7 && board[row][col].getColor() != getColor()) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
+
 		
 		//now one up, two left
 		row = getRow() + 1;
 		col = getCol() -2;
-		if (row <= 7 && col >=0 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row <= 7 && col >=0 && board[row][col].getColor() != getColor()) {
+		if (row <= 7 && col >=0 && (board[row][col] == null || board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -67,12 +53,7 @@ public class Knight extends Piece {
 		//now one up, two right
 		row = getRow() + 1;
 		col = getCol() +2;
-		if (row <= 7 && col <=7 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row <= 7 && col <=7 && board[row][col].getColor() != getColor()) {
+		if (row <= 7 && col <=7 && (board[row][col] == null || board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -81,12 +62,7 @@ public class Knight extends Piece {
 		//now one down, two left
 		row = getRow() -1;
 		col = getCol() -2;
-		if (row >= 0 && col >=0 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row >= 0 && col >=0 && board[row][col].getColor() != getColor()) {
+		if (row >= 0 && col >=0 && (board[row][col] == null || board[row][col].getColor() != getColor() ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -96,12 +72,7 @@ public class Knight extends Piece {
 		
 		row = getRow() -1;
 		col = getCol() +2;
-		if (row >= 0 && col <=7 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row >= 0 && col <=7 && board[row][col].getColor() != getColor()) {
+		if (row >= 0 && col <=7 && (board[row][col] == null ||board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -110,12 +81,7 @@ public class Knight extends Piece {
 		//now two down, one left
 		row = getRow() -2;
 		col = getCol() -1;
-		if (row >= 0 && col >=0 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row >= 0 && col >=0 && board[row][col].getColor() != getColor()) {
+		if (row >= 0 && col >=0 && (board[row][col] == null ||board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -125,12 +91,7 @@ public class Knight extends Piece {
 		
 		row = getRow() -2;
 		col = getCol() +1;
-		if (row >= 0 && col <=7 && board[row][col] == null) {
-			possibleMoves[0][i] = row;
-			possibleMoves[1][i] = col;
-			i++;
-		}
-		if (row >= 0 && col <= 7 && board[row][col].getColor() != getColor()) {
+		if (row >= 0 && col <=7 && (board[row][col] == null || board[row][col].getColor() != getColor()) ) {
 			possibleMoves[0][i] = row;
 			possibleMoves[1][i] = col;
 			i++;
@@ -140,8 +101,5 @@ public class Knight extends Piece {
 	}
 		
 
-	public boolean isLegal(int toRow, int toCol, Board _b) {
-	   	 return false; 
-	} 
-	// no need to overload move method??
+	 
 }
