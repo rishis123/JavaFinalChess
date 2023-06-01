@@ -1,8 +1,19 @@
 public class Pawn extends Piece {
     private boolean hasMoved;
+	private boolean c;
 
+
+	/**
+	Constructs a pawn object
+	
+	@param c the color of the pawn
+	@param row the row of the pawn
+	@param col the column of the pawn
+	
+	*/
 	public Pawn(boolean c, int row, int col) {
 		super("pawn", c, row, col);
+		this.c = c;
 	}
 
 	
@@ -18,7 +29,7 @@ public class Pawn extends Piece {
 		int col = getCol();
 		int i = 0;//counter
 		
-		if (getColor()) {//color boolean, true is white, black is false -- need for pawn separation
+		if (c) {//color boolean, true is white, black is false -- need for pawn separation
 			if (row == 1 && board[row+1][col] == null && board[row+2][col] == null) { // we are using 0-based indexing for rows and columns
 			    possibleMoves[0][i] = row + 2; // can move 2 spaces
 			    possibleMoves[1][i] = col;
