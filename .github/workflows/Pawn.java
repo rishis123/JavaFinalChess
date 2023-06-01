@@ -46,12 +46,12 @@ public class Pawn extends Piece {
 			    possibleMoves[0][i] = col;
 			    i++;
 			}
-			if (col < 7 && (board[row+1][col+1] != null || board[row+1][col+1].getColor() != getColor())) { // capture
+			if (col < 7 && (board[row+1][col+1] != null || (board[row+1][col+1] != null && board[row+1][col+1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row+1; 
 			    possibleMoves[0][i] = col+1;
 			    i++;
 			}
-			if (col > 0 && (board[row+1][col-1] != null || board[row+1][col-1].getColor() != getColor())) { // capture
+			if (col > 0 && (board[row+1][col-1] != null || (board[row+1][col-1] != null && board[row+1][col-1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row+1; 
 			    possibleMoves[0][i] = col-1;
 			    i++;
@@ -68,12 +68,12 @@ public class Pawn extends Piece {
 			    possibleMoves[0][i] = col;
 			    i++;
 			}
-			if (col < 7 && (board[row-1][col+1] != null || board[row-1][col+1].getColor() != getColor())) { // capture
+			if (col < 7 && (board[row-1][col+1] != null || (board[row-1][col+1] != null && board[row-1][col+1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row-1; 
 			    possibleMoves[0][i] = col+1;
 			    i++;
 			}
-			if (col > 0 && (board[row-1][col-1] != null || board[row-1][col-1].getColor() != getColor())) { // capture
+			if (col > 0 && (board[row-1][col-1] != null || (board[row-1][col-1] != null && board[row-1][col-1].getColor() != getColor()))) { // capture
 			   possibleMoves[0][i] = row-1; 
 			    possibleMoves[0][i] = col-1;
 			    i++;
