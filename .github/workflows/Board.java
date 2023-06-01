@@ -1,12 +1,13 @@
 import java.util.ArrayList;
-
+/**
+Make a board object, with all pieces inputted and methods to get the board, set particular square values, etc.
+*/
 public class Board {
 	private Piece[][] board; //rows are letters, columns are numbers; top left is a8, bottom right is h1
 	
-	public Board(String test) {
-		board = new Piece[8][8];
-	}
-	
+	/**
+	Construct a board, assign pieces to initial positions
+	*/
 	public Board() {
 		board = new Piece[8][8];
 		for(int i = 0; i < 8; i++) {
@@ -36,6 +37,10 @@ public class Board {
 		}
 	
 	}
+	/**
+	returns the board, note board[rows][columns] is the format we are using
+	@return the board
+	*/
 	public Piece[][] getBoard(){
 		return board;
 	}
@@ -62,7 +67,9 @@ public class Board {
 	public Piece getSquare(int r, int c) {
 		return board[r][c];
 	}
-	
+	/**
+	What does this do?
+	*/
 	public ArrayList<Piece> pieces() {
 		ArrayList<Piece> p = new ArrayList<Piece>();
 		for(int r = 0; r < 8; r++) {
