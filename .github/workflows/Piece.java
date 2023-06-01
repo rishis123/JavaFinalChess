@@ -34,10 +34,20 @@ public abstract class Piece {
 		row = r;
 	}
 	
-	//returns true if the move toRow, toCol is legal
-	public abstract boolean isLegal(int toRow, int toCol, Board _b);
+	/**
+	returns 2D array of all possible moves for piece of interest, with first row representing all possible move-rows and second row representing all possible move-columns
+	@param b the passed in board
+	@return the 2D array described above
+	*/
 	public abstract int[][] getPossibleMoves(Board b);
 	
+	/**
+	returns true if an inputted move is in the 2D array from getPossibleMoves, else returns false and is invalid
+	@param r the row for the piece to move to
+	@param c the column for the piece to move to
+	@param b the passed in board
+	@return whether or not the move is in the array
+	*/
 	public boolean inPossibleMoves(int r, int c, Board b) {
 		int[][] possibleMoves = getPossibleMoves(b);
 		int i = 0;
