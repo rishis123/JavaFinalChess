@@ -79,7 +79,6 @@ return name of piece
 	@param toRow the row for the piece to move to
 	@param c the column for the piece to move to
 	@param b the passed in board
-	@return whether or not the move is in the array
 	*/
 	
 	public void move(int toRow, int toCol, Board b) { 
@@ -89,21 +88,7 @@ return name of piece
 		col = toCol;
 		row = toRow;
 	}
-	/**
+
 	
-	*/
-	
-	public boolean move(int toRow, int toCol, Board b) { // is toRow and toCol the final row or col or intiial
-		if (isLegal(toRow, toCol, b)) {
-		    Piece p = b.getSquare(row, col);
-		    b.setSquare(null, row, col);
-		    b.setSquare(p, row, col);
-			col = toCol;
-			row = toRow;
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
+
 }
