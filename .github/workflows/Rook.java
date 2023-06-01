@@ -1,5 +1,5 @@
 /**
-The rook class implements the rook piece, including methods to determine if a certain move is legal and to return a 2D array of all possible moves for the rook at each turn.
+The rook class implements the rook piece, including methods to return a 2D array of all possible moves for the rook at each turn.
 */
 
 
