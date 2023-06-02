@@ -119,4 +119,27 @@ public int[][] getPossibleMoves(Board b) {
 	
 	
 	//moving pawnPromote method to piece class -- contains method for movement.
+	
+	public void move(int toRow, int toCol, Board b) { 
+		Piece p = b.getSquare(row, col);
+		
+		if (p.getColor() && row == 1 ) { // white piece, reach 0th rank to pawn promote
+			b.setSquare(null, row, col);
+			Queen qWhite = new Queen(p.getColor(), row,col ); // arbitrary initial position
+			b.setSquare(qWhite, toRow, toCol);
+			col = toCol;
+			row = toRow;
+		}
+		
+		if (!p.getColor() && row == 6 ) { // black piece, reach 7th rank to pawn promote -- note our graphics effectively is normal chessboard flipped
+			b.setSquare(null, row, col);
+			Queen qBlack = new Queen(p.getColor(), row,col ); // arbitrary initial position, as long as it is null
+			b.setSquare(qBlack, toRow, toCol);
+			col = toCol;
+			row = toRow;
+		}
+		
+		
+		
+	}
 }
