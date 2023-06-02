@@ -61,7 +61,17 @@ public class Game {
         return false; //implement later
     }
 
-    public static boolean checkStaleMate(Board _b) {
-        return false; //implement later
+   public static boolean checkStaleMate(Board _b, boolean c) {
+        Piece[][] b = _b.getBoard();
+        for (int i = 0; i < b.length; i++) {
+        	for (int j = 0; j < b[0].length; j++) {
+        		if (b[i][j] != null && b[i][j].getColor() == c) {
+        			if (b[i][j].getPossibleMoves(_b)[0][0] != -1) {
+        				return false;
+        			}
+        		}
+        	}
+        }
+        return true;
     }
 }
