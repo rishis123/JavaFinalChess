@@ -118,7 +118,12 @@ public int[][] getPossibleMoves(Board b) {
 	
 	
 	
-	//moving pawnPromote method to piece class -- contains method for movement.
+	/**
+	Overriden piece class' move method, specially made for pawn in case of promotion to queen -- if in final rank of respective color, replaces with Queen of same color
+	@param toRow the final Row of queen
+	@param toCol the final column of queen
+	@param b the passed in board
+	*/
 	
 	public void move(int toRow, int toCol, Board b) { 
 		Piece p = b.getSquare(row, col);
