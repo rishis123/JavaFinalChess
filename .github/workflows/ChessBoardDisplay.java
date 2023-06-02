@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -184,7 +185,7 @@ public class ChessBoardDisplay {
 				int bCol = e.getX() / 60;
 				int bRow = (e.getY() - 30) / 60;
 
-				System.out.println(bRow + " | " + bCol);
+//				System.out.println(bRow + " | " + bCol);
 //				m = getPiece(e.getX(), e.getY() - 30); // -30 bc its bugged for some reason
 //				System.out.println(m);
 				if(m == null) {
@@ -200,33 +201,34 @@ public class ChessBoardDisplay {
 						System.out.println("deselected");
 					}
 					else {
-						System.out.println(selected[0] + " : " + selected[1]);
-						System.out.println(m);
+//						System.out.println(selected[0] + " : " + selected[1]);
+//						System.out.println(m);
 						
-						int[] moveMade = selected;
+//						int[] moveMade = selected;
 						int[][] possibleMoves = m.getPossibleMoves(b);
 						for(int i = 0; i < possibleMoves[0].length; i++) {
-							System.out.println(possibleMoves[0][i] + "   " + possibleMoves[1][i]);
+//							System.out.println(possibleMoves[0][i] + "   " + possibleMoves[1][i]);
 							if(possibleMoves[0][i] == selected[0] && possibleMoves[1][i] == selected[1] && toggleTurn == m.getColor()) {
-								System.out.println("legal");
+//								System.out.println("legal");
 								
 								m.move(bRow, bCol, b);
 								p = b.pieces();
-								System.out.println(m);
-								System.out.println(toggleTurn);
+//								System.out.println(m);
+//								System.out.println(toggleTurn);
 								frame.repaint();
 								
 								toggleTurn = !toggleTurn;
 								m = null;
+								break;
 							}
-							else {
-								System.out.println("illegal");
+//							else {
+//								System.out.println("illegal");
 //								m = null;
 //								i = 100;
-							}
+//							}
 //							m = null;
 						}
-						System.out.println(toggleTurn);
+//						System.out.println(toggleTurn);
 					}
 					
 				}
