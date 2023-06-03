@@ -57,8 +57,24 @@ public class Game {
 		return false;
 	}
 
-    public static boolean checkMate(Board _b) {
-        return false; //implement later
+/**
+Returns whether board is resulting in a checkmate, assuming checkCheck works as expected
+@param _b the board passed in
+@param color the color of the checkMated side
+@return whether or not checkmate
+*/
+    public static boolean checkMate(Board b, boolean color) {
+        if (checkCheck(Board _b, boolean color) { // check at least is necessary, then first find the king
+		for (int i = 0; i<b.length; i++) {
+			for (int j = 0; j<b[0].length; j++) {
+				if (b[i][j].getSquare().getName("king") && b[i][j[.getSquare().getColor(color)) {
+					
+	
+		}
+			
+	}
+	    
+		
     }
 
    public static boolean checkStaleMate(Board _b, boolean c) {
